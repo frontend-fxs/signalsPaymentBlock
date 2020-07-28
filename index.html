@@ -56,27 +56,35 @@
                     top: -2000px;
                     bottom: -3000px;
                     transition: all 1s ease-in-out;
+                    z-index:99999999
                   }
 
                   .fxs_signals-payment-block-trigger {
                     position: fixed;
-                    bottom: 0;
+                    bottom: 37px;
                     left: 0;
                     right: 0;
-                    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
-                    -moz-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
-                    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
+                    z-index:9999999
                   }
 
                   .fxs_signals-payment-block-content.fxs_expanded {
                     position: fixed;
-                    top: 0;
-                    bottom: 0;
+                    top: 45px;
+                    bottom: 65px;
                     left: 0;
                     right: 0;
                     background-color: rgba(0, 0, 0, 0.5);
+                    z-index:99999999;
                   }
-
+                  @media (min-width: 680px) {
+                    .fxs_signals-payment-block-trigger,
+                    .fxs_signals-payment-block-content.fxs_expanded {
+                      bottom: 36px;
+                    }
+                    .fxs_signals-payment-block-content.fxs_expanded {
+                      top: 42px;
+                    }
+                  }
                   .fxs_signals-payment-block-content-inner {
                     position: absolute;
                     bottom: 0;
@@ -95,6 +103,9 @@
                     justify-content: space-between;
                     padding: 1rem;
                     padding: 2rem 1rem 2rem 2rem;
+                    
+                    z-index:9999999;
+
                   }
 
                   .fxs_signals-payment-block-trigger-inner,
@@ -114,6 +125,9 @@
                     justify-content: space-between;
                     align-items: center;
                     border-top: 4px solid #d5f9fc;
+                    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
+                    -moz-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
+                    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
                   }
 
                   .fxs_signals-payment-block-content-inner-inner {

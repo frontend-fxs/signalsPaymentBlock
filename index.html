@@ -63,6 +63,9 @@
                     bottom: 0;
                     left: 0;
                     right: 0;
+                    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
+                    -moz-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
+                    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.5);
                   }
 
                   .fxs_signals-payment-block-content.fxs_expanded {
@@ -100,9 +103,11 @@
                     margin: 0 auto;
                     background-color: white;
                   }
+
                   .fxs_signals-payment-block-content-header {
                     padding: 0 2rem 0.5rem;
                   }
+
                   .fxs_signals-payment-block-trigger-inner {
                     padding: 0.5rem 1rem;
                     display: flex;
@@ -110,6 +115,7 @@
                     align-items: center;
                     border-top: 4px solid #d5f9fc;
                   }
+
                   .fxs_signals-payment-block-content-inner-inner {
                     border-top: 4px solid #d5f9fc;
                     background-image: url("https://editorial.blob.core.windows.net/ico-logos/planetsBackground.svg");
@@ -157,7 +163,7 @@
                   }
 
                   .fxs_signals-payment-block-planet-top {
-                    top: 180px;
+                    top: 210px;
                     right: 0;
                     width: 20%;
                   }
@@ -172,7 +178,9 @@
                   .fxs_signals-payment-block-content-freemium,
                   .fxs_signals-payment-block-content-premium-description {
                     flex: 1 1;
-                    padding: 1rem;
+                  }
+                  .fxs_signals-payment-block-content-premium-description {
+                    padding: 0 1rem;
                   }
 
                   @media (min-width: 768px) {
@@ -190,11 +198,12 @@
                   .fxs_signals-payment-block-content-main .fxs_headline_tiny {
                     margin-bottom: 1rem;
                   }
+
                   .fxs_signals-payment-block-pricing-mini {
                     display: none;
                   }
 
-                  @media (min-width: 1080px) {
+                  @media (min-width: 768px) {
                     .fxs_signals-payment-block-pricing-mini {
                       display: flex;
                       justify-content: space-between;
@@ -211,14 +220,16 @@
                     font-size: 0.7rem;
                     line-height: 0.8rem;
                     margin-left: 1rem;
-                    padding: 0.2rem 2rem;
+                    padding: 0.2rem 1rem;
                     margin-top: 1rem;
                     align-items: center;
+                    text-decoration: none;
                   }
 
                   @media (min-width: 768px) {
                     .fxs_signals-payment-block-item {
                       margin-top: 0;
+                      padding: 0.2rem 2rem;
                     }
                   }
 
@@ -309,15 +320,21 @@
                   }
 
                   .fxs_pricing_table_item {
-                    padding: .5rem 1rem;
+                    padding: 0.5rem 1rem;
                     margin-top: 1rem;
                   }
 
                   .fxs_pricing_table_price {
                     padding-top: 0;
-                    padding-bottom: 1rem;
+                    padding-bottom: 0;
                   }
-
+                  @media (min-width: 768px) {
+                    .fxs_pricing_table_price {
+                      position: relative;
+                      padding-top: 1.5rem;
+                      padding-bottom: 3rem;
+                    }
+                  }
                   .fxs_pricing_table_subtitle {
                     position: relative;
                   }
@@ -338,7 +355,7 @@
                   }
 
                   .fxs_signals-payment-block-pricing-table-item .fxs_label {
-                    font-size: 10px;
+                    position: relative;
                   }
 
                   .fxs_btn_cta_border {
@@ -353,15 +370,18 @@
                   .fxs_pricing_table_item .fxs_pricing_table_subtitle {
                     font-size: 0.8rem;
                   }
-
+                  .fxs_signals-payment-block-slash {
+                    padding: 0.5rem;
+                    display: inline-block;
+                  }
                   @media (min-width: 768px) {
                     .fxs_signals-payment-block-slash {
                       display: none;
                     }
                   }
-                
+
                   .fxs_signals-payment-block-pricing-table-price-time
-                    .fxs_headline_medium,
+                    .fxs_headline_large,
                   .fxs_signals-payment-block-pricing-table-price-time {
                     display: flex;
                     flex-direction: row;
@@ -390,14 +410,23 @@
                   .fxs_signals-payment-block-trigger .fa-angle-up {
                     margin-right: 1rem;
                   }
+
                   .fxs_signals-payment-block-trigger .fxs_headline_small {
                     cursor: pointer;
+                  }
+                  .fxs_pricing_table_value {
+                    padding: 0;
+                  }
+                  @media (min-width: 768px) {
+                    .fxs_pricing_table_value {
+                      padding: 0.5rem 0;
+                    }
                   }
                 </style>
                 <div class="fxs_signals-payment-block-trigger">
                   <div class="fxs_signals-payment-block-trigger-inner">
                     <h3 class="fxs_headline_small" onClick="expandPayment()">
-                      <i class="fas fa-angle-up"></i>
+                      <i class="fas fa-angle-up"> </i>
                       Become a Premium Member of FXSTREET Signals
                     </h3>
                     <div class="fxs_signals-payment-block-pricing-mini">
@@ -405,33 +434,44 @@
                         href="https://www.fxstreet.com/account/premium-payment?subscriptionid=ba7897ce-e16a-4bb6-8c05-ed4499dc3c29&uritoredirect=/signals?product_tour_id=110062"
                         class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                         data-gtmid="landing-premium-1month"
-                        ><span
-                          ><strong
+                      >
+                        <span>
+                          <strong
                             class="fxs_signals-payment-block-pricing-mini-price"
-                            >35€ / </strong
-                          ><span>1 Month</span></span
-                        ><span>Total price 35€</span></a
-                      ><a
+                            >35€ /
+                          </strong>
+                          <span>1 Month</span>
+                        </span>
+                        <span>Total price 35€</span>
+                      </a>
+                      <a
                         href="https://www.fxstreet.com/account/premium-payment?subscriptionid=de0212bb-054a-4adb-a3cb-26b11ff3b334&uritoredirect=/signals?product_tour_id=110062"
                         class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                         data-gtmid="landing-premium-3month"
-                        ><span
-                          ><strong
+                      >
+                        <span>
+                          <strong
                             class="fxs_signals-payment-block-pricing-mini-price"
-                            >31.66€ / </strong
-                          ><span>3 Months</span></span
-                        ><span>Total Price 94.98€ </span></a
-                      ><a
+                            >31.66€ /
+                          </strong>
+                          <span>3 Months</span>
+                        </span>
+                        <span>Total Price 94.98€ </span>
+                      </a>
+                      <a
                         href="https://www.fxstreet.com/account/premium-payment?subscriptionid=f6bb3ea9-e28d-46ee-8889-6949518353df&uritoredirect=/signals?product_tour_id=110062"
                         class="fxs_btn_cta fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                         data-gtmid="landing-premium-12month"
-                        ><span
-                          ><strong
-                            class="fxs_signals-payment-block-pricing-mini-price"
-                            >26.66€ / </strong
-                          ><span>12 Months</span></span
-                        ><span>Total Price 319.92€ </span></a
                       >
+                        <span>
+                          <strong
+                            class="fxs_signals-payment-block-pricing-mini-price"
+                            >26.66€ /
+                          </strong>
+                          <span>12 Months</span>
+                        </span>
+                        <span>Total Price 319.92€ </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -441,14 +481,13 @@
                 >
                   <div class="fxs_signals-payment-block-content-inner">
                     <div class="fxs_signals-payment-block-content-inner-inner">
-                      <i
-                        class="fas fa-angle-down"
-                        onClick="collapsePayment()"
-                      ></i
-                      ><img
+                      <i class="fas fa-angle-down" onClick="collapsePayment()">
+                      </i>
+                      <img
                         src="https://editorial.blob.core.windows.net/ico-logos/planet-bottom.svg"
                         class="fxs_signals-payment-block-planet-bottom"
-                      /><img
+                      />
+                      <img
                         src="https://editorial.blob.core.windows.net/ico-logos/planet-top.svg"
                         class="fxs_signals-payment-block-planet-top"
                       />
@@ -465,34 +504,34 @@
                         >
                           <h4 class="fxs_headline_tiny">Free Account</h4>
                           <ul
-                            class="fxs_list_unstyled fxs_col fxs_entryPlain_txt_small"
+                            class="fxs_list_unstyled fxs_entryPlain_txt_small fxs_txt_weight_400"
                           >
                             <li>
-                              <i class="fas fa-check fxs_txt_success_clr"></i>
+                              <i class="fas fa-check fxs_txt_success_clr"> </i>
                               Strategies performance and description
                             </li>
                             <li>
-                              <i class="fas fa-check fxs_txt_success_clr"></i>
+                              <i class="fas fa-check fxs_txt_success_clr"> </i>
                               15 minutes delay
                             </li>
                             <li>
-                              <i class="fas fa-check fxs_txt_success_clr"></i>
+                              <i class="fas fa-check fxs_txt_success_clr"> </i>
                               Partial access to opened signals
                             </li>
                             <li>
-                              <i class="fas fa-check fxs_txt_success_clr"></i>
+                              <i class="fas fa-check fxs_txt_success_clr"> </i>
                               Desktop and mobile App availability
                             </li>
                             <li class="fxs_txt_light_2_clr">
-                              <i class="fas fa-times"></i> Context analysis of
+                              <i class="fas fa-times"> </i> Context analysis of
                               each strategy
                             </li>
                             <li class="fxs_txt_light_2_clr">
-                              <i class="fas fa-times"></i> Exclusive
+                              <i class="fas fa-times"> </i> Exclusive
                               communication channel with FX experts
                             </li>
                             <li class="fxs_txt_light_2_clr">
-                              <i class="fas fa-times"></i> Context Analysis of
+                              <i class="fas fa-times"> </i> Context Analysis of
                               market conditions
                             </li>
                           </ul>
@@ -509,34 +548,41 @@
                           >
                             <h4 class="fxs_headline_tiny">Premium Features</h4>
                             <ul
-                              class="fxs_list_unstyled fxs_col fxs_entryPlain_txt_small"
+                              class="fxs_list_unstyled fxs_entryPlain_txt_small fxs_txt_weight_400"
                             >
                               <li>
-                                <i class="fas fa-check fxs_txt_success_clr"></i>
+                                <i class="fas fa-check fxs_txt_success_clr">
+                                </i>
                                 Strategies performance and description
                               </li>
                               <li>
-                                <i class="fas fa-check fxs_txt_success_clr"></i>
+                                <i class="fas fa-check fxs_txt_success_clr">
+                                </i>
                                 Instant access to signals & results
                               </li>
                               <li>
-                                <i class="fas fa-check fxs_txt_success_clr"></i>
+                                <i class="fas fa-check fxs_txt_success_clr">
+                                </i>
                                 Full access to all available signals
                               </li>
                               <li>
-                                <i class="fas fa-check fxs_txt_success_clr"></i>
+                                <i class="fas fa-check fxs_txt_success_clr">
+                                </i>
                                 Desktop and mobile App availability
                               </li>
                               <li>
-                                <i class="fas fa-check fxs_txt_success_clr"></i>
+                                <i class="fas fa-check fxs_txt_success_clr">
+                                </i>
                                 Context analysis of each strategy
                               </li>
                               <li>
-                                <i class="fas fa-check fxs_txt_success_clr"></i>
+                                <i class="fas fa-check fxs_txt_success_clr">
+                                </i>
                                 Exclusive communication channel with FX experts
                               </li>
                               <li>
-                                <i class="fas fa-check fxs_txt_success_clr"></i>
+                                <i class="fas fa-check fxs_txt_success_clr">
+                                </i>
                                 Context Analysis of market conditions
                               </li>
                             </ul>
@@ -545,28 +591,36 @@
                             <div
                               class="fxs_signals-payment-block-pricing-table-item"
                             >
-                              <div
-                                class="fxs_pricing_table_item"
-                              >
+                              <div class="fxs_pricing_table_item">
                                 <div
                                   class="fxs_pricing_table_price fxs_clearfix"
                                 >
                                   <span
                                     class="fxs_signals-payment-block-pricing-table-price-time"
-                                    ><span class="fxs_headline_medium"
-                                      ><span>35€ </span
-                                      ><span
+                                  >
+                                    <span
+                                      class="fxs_pricing_table_value fxs_headline_large"
+                                    >
+                                      <span>35€ </span>
+                                      <span
                                         class="fxs_signals-payment-block-slash"
-                                        ><span>&nbsp;</span> /
-                                        <span>&nbsp;</span></span
-                                      ></span
-                                    ><span
+                                      >
+                                        <span>&nbsp;</span>
+                                        <span> / </span>
+                                        <span>&nbsp;</span>
+                                      </span>
+                                    </span>
+                                    <span
                                       class="fxs_pricing_table_value fxs_headline_small"
                                     >
                                       1 Month</span
-                                    ></span
-                                  ><span class="fxs_label"
+                                    >
+                                  </span>
+                                  <span class="fxs_label"
                                     >Total price: 35€</span
+                                  >
+                                  <span class="fxs_label fxs_hidden_768"
+                                    >&nbsp;</span
                                   >
                                 </div>
                                 <a
@@ -580,28 +634,36 @@
                             <div
                               class="fxs_signals-payment-block-pricing-table-item"
                             >
-                              <div
-                                class="fxs_pricing_table_item"
-                              >
+                              <div class="fxs_pricing_table_item">
                                 <div
                                   class="fxs_pricing_table_price fxs_clearfix"
                                 >
                                   <span
                                     class="fxs_signals-payment-block-pricing-table-price-time"
-                                    ><span class="fxs_headline_medium"
-                                      ><span>31.66€ </span
-                                      ><span
+                                  >
+                                    <span
+                                      class="fxs_pricing_table_value fxs_headline_large"
+                                    >
+                                      <span>31.66€ </span>
+                                      <span
                                         class="fxs_signals-payment-block-slash"
-                                        ><span>&nbsp;</span> /
-                                        <span>&nbsp;</span></span
-                                      ></span
-                                    ><span
+                                      >
+                                        <span>&nbsp;</span>
+                                        <span> / </span>
+                                        <span>&nbsp;</span>
+                                      </span>
+                                    </span>
+                                    <span
                                       class="fxs_pricing_table_value fxs_headline_small"
                                     >
                                       3 Months</span
-                                    ></span
-                                  ><span class="fxs_label"
+                                    >
+                                  </span>
+                                  <span class="fxs_label"
                                     >Total price: 94.98€</span
+                                  >
+                                  <span class="fxs_label"
+                                    >You save 10.02 €</span
                                   >
                                 </div>
                                 <a
@@ -623,22 +685,33 @@
                                 >
                                   <span class="fxs_pricing_table_subtitle"
                                     >Best deal</span
-                                  ><span
+                                  >
+                                  <span
                                     class="fxs_signals-payment-block-pricing-table-price-time"
-                                    ><span class="fxs_headline_medium"
-                                      ><span>26.66€ </span
-                                      ><span
+                                  >
+                                    <span
+                                      class="fxs_pricing_table_value fxs_headline_large"
+                                    >
+                                      <span>26.66€ </span>
+                                      <span
                                         class="fxs_signals-payment-block-slash"
-                                        ><span>&nbsp;</span> /
-                                        <span>&nbsp;</span></span
-                                      ></span
-                                    ><span
+                                      >
+                                        <span>&nbsp;</span>
+                                        <span> / </span>
+                                        <span>&nbsp;</span>
+                                      </span>
+                                    </span>
+                                    <span
                                       class="fxs_pricing_table_value fxs_headline_small"
                                     >
                                       12 Months</span
-                                    ></span
-                                  ><span class="fxs_label"
+                                    >
+                                  </span>
+                                  <span class="fxs_label"
                                     >Total price: 319.92€</span
+                                  >
+                                  <span class="fxs_label"
+                                    >You save 100,08 €</span
                                   >
                                 </div>
                                 <a
@@ -655,33 +728,44 @@
                               href="https://www.fxstreet.com/account/premium-payment?subscriptionid=ba7897ce-e16a-4bb6-8c05-ed4499dc3c29&uritoredirect=/signals?product_tour_id=110062"
                               class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                               data-gtmid="landing-premium-1month"
-                              ><span
-                                ><strong
+                            >
+                              <span>
+                                <strong
                                   class="fxs_signals-payment-block-pricing-mini-price"
-                                  >35€ / </strong
-                                ><span>1 Month</span></span
-                              ><span>Total price 35€</span></a
-                            ><a
+                                  >35€ /
+                                </strong>
+                                <span>1 Month</span>
+                              </span>
+                              <span>Total price 35€</span>
+                            </a>
+                            <a
                               href="https://www.fxstreet.com/account/premium-payment?subscriptionid=de0212bb-054a-4adb-a3cb-26b11ff3b334&uritoredirect=/signals?product_tour_id=110062"
                               class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                               data-gtmid="landing-premium-3month"
-                              ><span
-                                ><strong
+                            >
+                              <span>
+                                <strong
                                   class="fxs_signals-payment-block-pricing-mini-price"
-                                  >31.66€ / </strong
-                                ><span>3 Months</span></span
-                              ><span>Total Price 94.98€ </span></a
-                            ><a
+                                  >31.66€ /
+                                </strong>
+                                <span>3 Months</span>
+                              </span>
+                              <span>Total Price 94.98€ </span>
+                            </a>
+                            <a
                               href="https://www.fxstreet.com/account/premium-payment?subscriptionid=f6bb3ea9-e28d-46ee-8889-6949518353df&uritoredirect=/signals?product_tour_id=110062"
                               class="fxs_btn_cta fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                               data-gtmid="landing-premium-12month"
-                              ><span
-                                ><strong
-                                  class="fxs_signals-payment-block-pricing-mini-price"
-                                  >26.66€ / </strong
-                                ><span>12 Months</span></span
-                              ><span>Total Price 319.92€ </span></a
                             >
+                              <span>
+                                <strong
+                                  class="fxs_signals-payment-block-pricing-mini-price"
+                                  >26.66€ /
+                                </strong>
+                                <span>12 Months</span>
+                              </span>
+                              <span>Total Price 319.92€ </span>
+                            </a>
                           </div>
                         </div>
                       </main>
@@ -689,8 +773,9 @@
                         href="https://landing.fxstreet.com/signals/v1/"
                         target="_blank"
                         class="fxs_txt_size_small"
-                        ><strong>Need more info?</strong></a
                       >
+                        <strong>Need more info?</strong>
+                      </a>
                     </div>
                   </div>
                 </div>

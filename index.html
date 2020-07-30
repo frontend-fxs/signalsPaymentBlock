@@ -230,7 +230,9 @@
                     border: 1px solid #e4871b;
                     color: #49494f;
                   }
-
+                  .fxs_btn_cta_border:hover {
+                    background-color: #dddedf;
+                  }
                   .fxs_pricing_table_item .fxs_btn_xsmall {
                     line-height: 22px;
                     margin: 0;
@@ -248,8 +250,8 @@
                   .fxs_pricing_table_item .fxs_label {
                     position: relative;
                   }
-                  .fxs_pricing_table_item .fxs_label.fxs_custom-label{
-                    display:none;
+                  .fxs_pricing_table_item .fxs_label.fxs_custom-label {
+                    display: none;
                   }
                   .fxs_pricing_table_price {
                     padding-bottom: 1rem;
@@ -279,8 +281,12 @@
                     font-size: 1.8rem;
                     line-height: 2rem;
                   }
-                    
-
+                  .fxs_signals-payment-block-more-info {
+                    padding-left: 1rem;
+                  }
+                  .fxs_signals-payment-block-trigger-title {
+                    display: flex;
+                  }
                   @media (min-width: 680px) {
                     .fxs_signals-payment-block-trigger,
                     .fxs_signals-payment-block-content.fxs_expanded {
@@ -301,9 +307,9 @@
                   }
 
                   @media (min-width: 768px) {
-                    .fxs_pricing_table_item .fxs_label.fxs_custom-label{
-                    display:initial;
-                  }
+                    .fxs_pricing_table_item .fxs_label.fxs_custom-label {
+                      display: initial;
+                    }
                     .fxs_pricing_table_value {
                       padding: 0.5rem 0;
                     }
@@ -440,17 +446,17 @@
                 <div class="fxs_signals-payment-block-trigger">
                   <div class="fxs_signals-payment-block-trigger-inner">
                     <h3
-                      class="fxs_headline_small"
+                      class="fxs_headline_small fxs_signals-payment-block-trigger-title"
                       onClick="expandPayment()"
                       data-gtmid="features-signals-footer-closed-open"
                     >
-                      <i class="fas fa-angle-up"> </i> Become a Premium Member
-                      of FXSTREET Signals
+                      <i class="fas fa-angle-up"> </i>
+                      <span>Become a Premium Member of FXStreet Signals</span>
                     </h3>
                     <div class="fxs_signals-payment-block-pricing-mini">
                       <a
                         href="/account/premium-payment?subscriptionid=ba7897ce-e16a-4bb6-8c05-ed4499dc3c29&uritoredirect=/signals"
-                        class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small fxs_go-to-login"
+                        class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                         data-gtmid="features-signals-footer-closed-monthly"
                       >
                         <span>
@@ -464,7 +470,7 @@
                       </a>
                       <a
                         href="/account/premium-payment?subscriptionid=de0212bb-054a-4adb-a3cb-26b11ff3b334&uritoredirect=/signals"
-                        class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small fxs_go-to-login"
+                        class="fxs_btn_cta_border fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                         data-gtmid="features-signals-footer-closed-quaterly"
                       >
                         <span>
@@ -478,7 +484,7 @@
                       </a>
                       <a
                         href="/account/premium-payment?subscriptionid=f6bb3ea9-e28d-46ee-8889-6949518353df&uritoredirect=/signals"
-                        class="fxs_btn_cta fxs_signals-payment-block-item fxs_entryPlain_txt_small fxs_go-to-login"
+                        class="fxs_btn_cta fxs_signals-payment-block-item fxs_entryPlain_txt_small"
                         data-gtmid="features-signals-footer-closed-yearly"
                       >
                         <span>
@@ -512,7 +518,7 @@
 
                       <header class="fxs_signals-payment-block-content-header">
                         <h3 class="fxs_headline_small">
-                          Become a Premium Member of FXSTREET Signals
+                          Become a Premium Member of FXStreet Signals
                         </h3>
                       </header>
                       <main
@@ -653,8 +659,8 @@
                                   >
                                 </div>
                                 <a
-                                  href="/account/premium-payment?subscriptionid=4CA906CD-AEAD-402A-A130-DDC2F69AD877&amp;uritoredirect=/signals"
-                                  class="fxs_btn fxs_btn_cta fxs_btn_block fxs_btn_xsmall fxs_go-to-login"
+                                  href="/account/premium-payment?subscriptionid=ba7897ce-e16a-4bb6-8c05-ed4499dc3c29&uritoredirect=/signals"
+                                  class="fxs_btn fxs_btn_cta fxs_btn_block fxs_btn_xsmall"
                                   data-gtmid="features-signals-footer-opened-monthly"
                                   >Monthly Subscription
                                 </a>
@@ -694,8 +700,8 @@
                                   >
                                 </div>
                                 <a
-                                  href="/account/premium-payment?subscriptionid=12C86CA8-04FE-4EFB-8767-92E230591EA2&amp;uritoredirect=/signals"
-                                  class="fxs_btn fxs_btn_cta fxs_btn_block fxs_btn_xsmall fxs_go-to-login"
+                                  href="/account/premium-payment?subscriptionid=de0212bb-054a-4adb-a3cb-26b11ff3b334&uritoredirect=/signals"
+                                  class="fxs_btn fxs_btn_cta fxs_btn_block fxs_btn_xsmall"
                                   data-gtmid="features-signals-footer-opened-quaterly"
                                   >Quarterly Subscription
                                 </a>
@@ -740,8 +746,8 @@
                                   >
                                 </div>
                                 <a
-                                  href="/account/premium-payment?subscriptionid=4862B6EE-1767-4D01-8B71-AEF71E43EA90&amp;uritoredirect=/signals"
-                                  class="fxs_btn fxs_btn_cta fxs_btn_block fxs_btn_xsmall fxs_go-to-login"
+                                  href="/account/premium-payment?subscriptionid=f6bb3ea9-e28d-46ee-8889-6949518353df&uritoredirect=/signals"
+                                  class="fxs_btn fxs_btn_cta fxs_btn_block fxs_btn_xsmall"
                                   data-gtmid="features-signals-footer-opened-yearly"
                                   >Yearly Subscription
                                 </a>
@@ -753,7 +759,7 @@
                       <a
                         href="https://landing.fxstreet.com/signals/v1/"
                         target="_blank"
-                        class="fxs_txt_size_small"
+                        class="fxs_txt_size_small fxs_signals-payment-block-more-info"
                         data-gtmid="features-signals-footer-opened-moreinfo"
                       >
                         <strong>Need more info?</strong>
@@ -767,15 +773,15 @@
                       "#fxs_signals-payment-block-content"
                     );
                     paymentContent.classList.remove("fxs_expanded");
-                    console.log(paymentContent);
                   }
+
                   function expandPayment() {
                     let paymentContent = document.querySelector(
                       "#fxs_signals-payment-block-content"
                     );
                     paymentContent.classList.add("fxs_expanded");
-                    console.log(paymentContent);
                   }
+
                   window.addEventListener(
                     "becomePremium",
                     function (e) {
@@ -783,18 +789,22 @@
                     },
                     false
                   );
+
+                  document.body.addEventListener("keydown", function (e) {
+                    console.log(e.key);
+
+                    if (e.key == "Escape") {
+                      collapsePayment();
+                    }
+                  });
+                  document
+                    .querySelector("#fxs_signals-payment-block-content")
+                    .addEventListener("click", collapsePayment);
+
                   var intervalToken2 = setInterval(check2, 1000);
+
                   function stopInterval2() {
                     clearInterval(intervalToken2);
-                    if (!FXStreet.Resource.UserInfo.IsLogged) {
-                      let loginLinks = document.querySelectorAll(
-                        ".fxs_go-to-login"
-                      );
-                      for (let index = 0; index < loginLinks.length; index++) {
-                        const element = loginLinks[index];
-                        element.href = "/account/login";
-                      }
-                    }
                     if (FXStreet.Resource.UserInfo.IsPremium) {
                       document.querySelector(
                         "#fxs_signals-payment-block"

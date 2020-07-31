@@ -44,13 +44,7 @@
                     float: left;
                     height: 56px;
                   }
-                  .fxs_signals-payment-block-content {
-                    position: fixed;
-                    top: -2000px;
-                    bottom: -3000px;
-                    transition: all 1s ease-in-out;
-                    z-index: 99999999;
-                  }
+                  
                   .fxs_signals-payment-block-trigger {
                     position: fixed;
                     bottom: 65px;
@@ -58,14 +52,20 @@
                     right: 0;
                     z-index: 9999999;
                   }
-                  .fxs_signals-payment-block-content.fxs_expanded {
+                  .fxs_signals-payment-block-content {
                     position: fixed;
-                    top: 45px;
-                    bottom: 65px;
+                    top: 3000px;
+                    bottom: -3000px;
                     left: 0;
                     right: 0;
+                    transition: all 1s ease-in-out;
                     background-color: rgba(0, 0, 0, 0.5);
                     z-index: 99999999;
+                  }
+                  .fxs_signals-payment-block-content.fxs_expanded {
+                    top: 45px;
+                    bottom: 65px;
+                    transition: all 1s ease-in-out;
                   }
                   .fxs_signals-payment-block-content-inner {
                     position: absolute;

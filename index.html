@@ -52,20 +52,24 @@
                     right: 0;
                     z-index: 9999999;
                   }
+                  .fxs_signals-payment-block-content-backdrop{
+                    position: fixed;
+                    top:0;
+                    bottom:0;
+                    left:0;
+                    right:0;
+                    z-index: 99999998;
+                    background-color: rgba(0,0,0,0.5);
+                    display:none;
+                  }
                   .fxs_signals-payment-block-content {
                     position: fixed;
                     top: 3000px;
                     bottom: -3000px;
                     left: 0;
                     right: 0;
-                    transition: all 1s ease-in-out;
-                    background-color: rgba(0, 0, 0, 0.5);
+                    transition: bottom .5s ease-in-out;
                     z-index: 99999999;
-                  }
-                  .fxs_signals-payment-block-content.fxs_expanded {
-                    top: 45px;
-                    bottom: 65px;
-                    transition: all 1s ease-in-out;
                   }
                   .fxs_signals-payment-block-content-inner {
                     position: absolute;
@@ -74,12 +78,13 @@
                     right: 0;
                     max-height: 100%;
                     overflow: auto;
+                                       
                   }
                   .fxs_signals-payment-block-trigger-inner,
                   .fxs_signals-payment-block-content-inner-inner {
                     max-width: 1033px;
                     margin: 0 auto;
-                    background-color: white;
+                   
                   }
                   .fxs_signals-payment-block-trigger-inner {
                     min-height: 56px;
@@ -87,15 +92,17 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    border-top: 4px solid #d5f9fc;
+                    border-top: 4px solid #c6d4e1;
                     -webkit-box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.2);
                     -moz-box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.2);
                     box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.2);
+                    background-color: #304C70;
                   }
                   .fxs_signals-payment-block-content-inner-inner {
-                    border-top: 4px solid #d5f9fc;
+                    border-top: 4px solid #c6d4e1;
                     position: relative;
                     padding: 2rem 1rem 2.5rem 1rem;
+                    background-color: white; 
                   }
                   .fxs_signals-payment-block-content-inner-inner
                     .fa-angle-down {
@@ -154,7 +161,7 @@
                     flex-direction: column;
                   }
                   .fxs_signals-payment-block-content-premium {
-                    border: 3px solid #d5f9fc;
+                    border: 3px solid #c6d4e1;
                     position: relative;
                     display: flex;
                     justify-content: start;
@@ -200,6 +207,7 @@
                   .fxs_btn_cta_border {
                     border: 1px solid #e4871b;
                     color: #49494f;
+                    background-color:white;
                   }
                   .fxs_btn_cta_border:hover {
                     background-color: #dddedf;
@@ -230,6 +238,7 @@
                   }
                   .fxs_signals-payment-block-trigger .fxs_headline_small {
                     cursor: pointer;
+                    margin:0;
                   }
                   .fxs_pricing_table_value {
                     padding: 0;
@@ -380,7 +389,7 @@
                 <div class="fxs_signals-payment-block-trigger">
                   <div class="fxs_signals-payment-block-trigger-inner">
                     <h3
-                      class="fxs_headline_small fxs_signals-payment-block-trigger-title"
+                      class="fxs_headline_small fxs_signals-payment-block-trigger-title fxs_txt_lightest_clr"
                       onClick="expandPayment()"
                       data-gtmid="features-signals-footer-closed-open"
                     >
@@ -433,6 +442,7 @@
                     </div>
                   </div>
                 </div>
+                <div class="fxs_signals-payment-block-content-backdrop" id="fxs_signals-payment-block-content-backdrop"></div>
                 <div
                   class="fxs_signals-payment-block-content"
                   id="fxs_signals-payment-block-content"
@@ -693,7 +703,7 @@
                         </div>
                       </main>
                       <a
-                        href="https://landing.fxstreet.com/signals/v1/"
+                        href="/signals/faq/"
                         target="_blank"
                         class="fxs_txt_size_small fxs_signals-payment-block-more-info"
                         data-gtmid="features-signals-footer-opened-moreinfo"
@@ -708,13 +718,21 @@
                     let paymentContent = document.querySelector(
                       "#fxs_signals-payment-block-content"
                     );
-                    paymentContent.classList.remove("fxs_expanded");
+                    document.querySelector('#fxs_signals-payment-block-content-backdrop').style.display="none";
+                    paymentContent.style.top="3000px";
+                    paymentContent.style.bottom="-3000px";
                   }
                   function expandPayment() {
                     let paymentContent = document.querySelector(
                       "#fxs_signals-payment-block-content"
                     );
-                    paymentContent.classList.add("fxs_expanded");
+                    document.querySelector('#fxs_signals-payment-block-content-backdrop').style.display="block";
+                    paymentContent.style.top="45px";
+                    if(window.innerWidth>680){
+                      paymentContent.style.bottom="36px";
+                    }else{
+                      paymentContent.style.bottom="65px";
+                    }
                   }
                   window.addEventListener(
                     "becomePremium",
